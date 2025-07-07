@@ -4,17 +4,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    font-family: Comic sans, Arial, Courier New, Courier;
+    font-family: 'Crafty Girls', cursive;
     height: 100%;
     background-color: rgb(48, 51, 51);
 }
 
+/* styling the header */
 .header {
     color: white;
     text-align: center;
-    font-family: Comic sans, Arial, Courier New, Courier;
-}
-
-.container {
-    co
+    font-family: 'Crafty Girls', cursive;
+    font-size: 25px;
 }
