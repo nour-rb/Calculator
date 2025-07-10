@@ -1,12 +1,14 @@
 /*set the background image*/
  body {
-    background-image: url('images/math2.jpeg');
+    background-image: url('images/math04.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-attachment: scroll;
+    background-position: center top;
     font-family: 'Crafty Girls', cursive;
-    height: 100%;
+    min-height: 180vh;
     background-color: rgb(48, 51, 51);
+ }
 
 main {
     display: flex;
