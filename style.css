@@ -12,18 +12,19 @@
 
 main {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     gap: 50px;
-    flex-grow: 2;
-    flex-shrink: 0;
-    flex-basis: auto;
+    flex: 1 2 0;
+    padding-right: 150px;
+    padding-left: 600px;
+    margin-right: 0px;
+
 }
 /* styling the header */
 .header {
-    color: black;
-    text-align: center;
+    color: rgb(239, 72, 153);
     font-family: 'Crafty Girls', cursive;
     font-size: 25px;
 }
@@ -31,6 +32,6 @@ main {
     height: 600px;
     width: 400px;
     background-color: white;
-    border: solid black 3px;
-    border-radius: 9px;
+    border: solid rgb(239, 72, 153) 3px;
+    border-radius: 12px;
 }
