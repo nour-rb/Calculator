@@ -38,3 +38,15 @@ header .header {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* styling the frame and the buttons*/
+
+/* the display screen*/
+div .screen {
+    width: 350px;
+    height: 125px;
+    margin: 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px rgb(239, 72, 111) solid;
+
+} 
