@@ -1,6 +1,7 @@
 /*set the background image*/
  body {
     background-image: url('images/math04.jpg');
+    flex: 1 2 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -12,26 +13,28 @@
 
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 50px;
     flex: 1 2 0;
-    padding-right: 150px;
-    padding-left: 600px;
-    margin-right: 0px;
+    max-width: 800px;
+    margin-top: 90px;
+    margin-right: 40px;
+    margin-left: auto;
 
 }
 /* styling the header */
-.header {
-    color: rgb(239, 72, 153);
-    font-family: 'Crafty Girls', cursive;
-    font-size: 25px;
+header .header {
+    color: rgb(239, 72, 111);
+    font-family: 'Crafty Girls', cursive, sans-serif;
+    font-size: 35px;
 }
 .frame {
     height: 600px;
     width: 400px;
     background-color: white;
-    border: solid rgb(239, 72, 153) 3px;
+    border: solid rgb(239, 72, 111) 3px;
     border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
