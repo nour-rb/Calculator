@@ -54,21 +54,52 @@ div .screen {
 } 
 div .numbers {
     width: 350px;
-    height: 125px;
+    height: auto;
     margin: 25px;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 35px;
     text-align: center;
     
 }
-.number {
-    width: 93px;
-    height: 75px;
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    max-width: 350px;
+    margin: 25px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.top > #AC {
+    width: 50%;
+}
+.button {
+    width: 55px;
+    height: 45px;
     background-color: white;
     border: solid rgb(239, 72, 111) 3px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    font-size: 50px;
+    font-size: 30px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: start;
+    gap: 30px;
+    max-width: 350px;
+    margin: 25px;
+    text-align: center;
+}
+
+#equal {
+  flex-grow: 2;
+  flex-basis: 110px;
 }
