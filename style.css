@@ -103,3 +103,6 @@ div .numbers {
   flex-grow: 2;
   flex-basis: 110px;
 }
+.dark {
+    box-shadow: 0 4px 10px rgba(254, 117, 169, 0.953);
+}

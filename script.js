@@ -1,10 +1,16 @@
-const buttons = document.querySelectorAll('.button')
+const buttons = document.querySelectorAll('.button');
 
 buttons.forEach(button => {
-    button.addEventListener("click", showOnScreen)
+  button.addEventListener("click", () => {
+    const screen = document.getElementById('screen');
+    screen.textContent += button.textContent;
+  });
 
-        function showOnScreen(){
-            const screen = document.getElementById('screen') 
-            // This adds the button text to the screen
-            screen.textContent += button.textContent;
-}})
+  button.addEventListener("mouseover", () => {
+    button.classList.add('dark');
+  });
+
+  button.addEventListener("mouseout", () => {
+    button.classList.remove('dark');
+  });
+});
