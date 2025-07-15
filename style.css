@@ -50,6 +50,8 @@ div .screen {
     border: 1px rgb(239, 72, 111) solid;
     border-radius: 12px;
     margin-bottom: 35px;
+    font-size: 30px
+    padding: 20px;
 
 } 
 div .numbers {

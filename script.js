@@ -1,13 +1,14 @@
 const buttons = document.querySelectorAll('.button');
 const screen = document.getElementById('screen');
+const equal = document.getElementById('equal')
 
 let currentNumber = "";
+let firstNumber = null;
+let operator = null;
+let secondNumber = null;
+let isFirstNumber = true;
 
 buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    currentNumber += button.textContent;
-    screen.textContent = currentNumber;
-  });
 
   button.addEventListener("mouseover", () => {
     button.classList.add('dark');
@@ -15,6 +16,47 @@ buttons.forEach(button => {
 
   button.addEventListener("mouseout", () => {
     button.classList.remove('dark');
+  });
+
+  button.addEventListener("click", () => {
+    const value = button.textContent;
+
+     if (!isNaN(value)) {
+      // If it's a number
+      if (isFirstNumber) {
+        firstNumber += value;
+        screen.textContent = firstNumber;
+      } else {
+        secondNumber += value;
+        screen.textContent = secondNumber;
+      }
+    }
+
+    if (["+", "-", "*", "/"].includes(value)) {
+      operator = value;
+      isFirstNumber = false;
+    }
+
+    if (value === "=") {
+      if (firstNumber !== "" && secondNumber !== "" && operator) {
+        const result = operate(operator, Number(firstNumber), Number(secondNumber));
+        screen.textContent = result;
+
+        // Resetting for new calculation
+        firstNumber = result.toString();
+        secondNumber = "";
+        operator = null;
+        isFirstNumber = true;
+      }
+    }
+
+    if (value === "AC") {
+      firstNumber = "";
+      secondNumber = "";
+      operator = null;
+      isFirstNumber = true;
+      screen.textContent = "";
+    }
   });
 });
 
@@ -38,9 +80,6 @@ function divide(a, b) {
   return a / b;
 }
 
-let rightNumber = null;
-let operator = null;
-let LeftNumber = null;
 
 function operate(operator, a, b) {
     if (operator === "+") return add(a, b);
