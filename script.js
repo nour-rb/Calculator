@@ -1,15 +1,12 @@
 const buttons = document.querySelectorAll('.button');
 const screen = document.getElementById('screen');
-const equal = document.getElementById('equal')
 
-let currentNumber = "";
-let firstNumber = null;
+let firstNumber = "";
+let secondNumber = "";
 let operator = null;
-let secondNumber = null;
 let isFirstNumber = true;
 
 buttons.forEach(button => {
-
   button.addEventListener("mouseover", () => {
     button.classList.add('dark');
   });
@@ -21,8 +18,8 @@ buttons.forEach(button => {
   button.addEventListener("click", () => {
     const value = button.textContent;
 
-     if (!isNaN(value)) {
-      // If it's a number
+    if (!isNaN(value)) {
+      // It's a number
       if (isFirstNumber) {
         firstNumber += value;
         screen.textContent = firstNumber;
@@ -42,7 +39,7 @@ buttons.forEach(button => {
         const result = operate(operator, Number(firstNumber), Number(secondNumber));
         screen.textContent = result;
 
-        // Resetting for new calculation
+        // Prepare for next operation
         firstNumber = result.toString();
         secondNumber = "";
         operator = null;
@@ -60,30 +57,23 @@ buttons.forEach(button => {
   });
 });
 
-
+// Math functions
 function add(a, b) {
   return a + b;
 }
-
 function subtract(a, b) {
   return a - b;
 }
-
 function multiply(a, b) {
   return a * b;
 }
-
 function divide(a, b) {
-  if (b === 0) {
-    return "Can't divide by 0!";
-  }
+  if (b === 0) return "Can't divide by 0!";
   return a / b;
 }
-
-
 function operate(operator, a, b) {
-    if (operator === "+") return add(a, b);
-    if (operator === "-") return subtract(a, b);
-    if (operator === "*") return multiply(a, b);
-    if (operator === "/") return divide(a, b);
+  if (operator === "+") return add(a, b);
+  if (operator === "-") return subtract(a, b);
+  if (operator === "*") return multiply(a, b);
+  if (operator === "/") return divide(a, b);
 }
